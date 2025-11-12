@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto - CyberSecure MX</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>#map{height:400px;border-radius:8px;}</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">CSMX</div>
+        <div class="brand-text"><strong>CyberSecure MX</strong><span>Soporte & Consultoría</span></div>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contacto</h1>
+    <p>Oficina central (ficticia): San Luis Potosí, SLP</p>
+
+    <div id="map"></div>
+
+    <section class="contact-form">
+      <h2>Envíanos un mensaje</h2>
+      <form id="contactForm" onsubmit="sendMessage(event)">
+        <label>Nombre<input type="text" id="nombre" required></label>
+        <label>Email<input type="email" id="email" required></label>
+        <label>Mensaje<textarea id="mensaje" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <div id="form-result" style="margin-top:12px;"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="year4"></span> CyberSecure MX — San Luis Potosí</div>
+      <div class="social">Contacto: <a href="mailto:contacto@cybersecuremx.example">contacto@cybersecuremx.example</a></div>
+    </div>
+  </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/script.js"></script>
+<script>
+// Inicializar mapa centrado en San Luis Potosí (lat, lon)
+const lat = 22.1565, lon = -100.9855;
+document.addEventListener('DOMContentLoaded', ()=>{
+  const map = L.map('map').setView([lat, lon], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  L.marker([lat, lon]).addTo(map).bindPopup('CyberSecure MX (oficina ficticia) - San Luis Potosí').openPopup();
+});
+function sendMessage(e){ e.preventDefault();
+  const res = document.getElementById('form-result');
+  res.innerText = '¡Mensaje enviado (simulado)! Gracias — responderemos a la brevedad.';
+  document.getElementById('contactForm').reset();
+}
+</script>
+</body>
+</html>
