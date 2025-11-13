@@ -370,3 +370,41 @@ body {
   .cart { position: static; width: 100%; margin-top: 24px; border-radius: 12px; }
   .footer .container { flex-direction: column; text-align: center; gap: 8px; }
 }
+/* ----------------------------------------------------------------------- */
+/* EFECTO MATRIX PARA EL HEADER */
+/* ----------------------------------------------------------------------- */
+
+#matrix-header {
+  position: relative;
+  overflow: hidden;
+}
+
+#matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#matrix-canvas.active {
+  opacity: 0.7;
+}
+
+/* Asegurar que el contenido del header esté por encima del canvas */
+.header-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mejorar legibilidad del texto sobre el efecto */
+.brand-text strong,
+.brand-text span,
+.menu a {
+  position: relative;
+  z-index: 3;
+}
