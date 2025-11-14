@@ -1,10 +1,10 @@
 
 // Carrito simple con localStorage
 const products = [
-  {id:1, name:'Soporte remoto (1 hora)', price:350.00, img:'soporte.svg', desc:'Soporte técnico remoto por 1 hora.'},
-  {id:2, name:'Auditoría básica', price:1200.00, img:'auditoria.svg', desc:'Evaluación de seguridad básica y reporte.'},
-  {id:3, name:'Firewall virtual (configuración)', price:900.00, img:'firewall.svg', desc:'Instalación y configuración básica de firewall.'},
-  {id:4, name:'Curso: Fundamentos de Ciberseguridad', price:650.00, img:'curso.svg', desc:'Curso presencial/online de 8 horas.'}
+  {id:1, name:'Soporte remoto (1 hora)', price:350.00, img:'soporte.png', desc:'Soporte técnico remoto por 1 hora.'},
+  {id:2, name:'Auditoría básica', price:1200.00, img:'auditoria.png', desc:'Evaluación de seguridad básica y reporte.'},
+  {id:3, name:'Firewall virtual (configuración)', price:900.00, img:'firewall.png', desc:'Instalación y configuración básica de firewall.'},
+  {id:4, name:'Curso: Fundamentos de Ciberseguridad', price:650.00, img:'curso.png', desc:'Curso presencial/online de 8 horas.'}
 ];
 
 function formatMoney(n){ return Number(n).toFixed(2); }
